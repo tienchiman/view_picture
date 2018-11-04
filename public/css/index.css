@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 0.16rem;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    background: #e5e5e5;
+    margin: 0 auto;
+    padding: 0.1rem;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    display: flex;
+    background: #e5e5e5;
+    padding-right: 1.66rem;
+}
+
+.left, .right {
+    padding: 0.16rem;
+    box-shadow: 0 0.01rem 0.03rem 0 #e5e5e5, 0 0.04rem 0.08rem 0 rgba(0, 0, 0, .02);
+    background: #fff;
+}
+
+.left {
+    flex: 6;
+    height: auto;
+    min-height: 7rem;
+}
+
+.right {
+    position: fixed;
+    right: 0.08rem;
+    top: 0.02rem;
+    width: 1.5rem;
+    height: 100%;
+    padding: 0.02rem 0;
+}
+
+.left .head, #prev, #next {
+    display: block;
+    width: 100%;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    margin: 0.1rem 0;
+    text-shadow: none;
+    background: #EC414D;
+    color: #fff;
+    font-size: 0.2rem;
+    text-align: center;
+    border-radius: 0.05rem;
+}
+
+#img-board {
+    width: 100%;
+}
+
+#img-container {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.right .head {
+    display: block;
+    width: 95%;
+    margin: 0.1rem auto;
+    border-radius: 2px;
+    font-size: 0.16rem;
+    height: 0.32rem;
+    line-height: 0.3rem;
+    background: #ededed;
+    border: 0.01rem solid #ededed;
+    cursor: pointer;
+    text-decoration: none;
+    color: #444;
+    white-space: nowrap;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    text-align: center;
+    box-shadow: 0 0 0 transparent;
+}
+
+#navs {
+    width: 100%;
+    height: calc(100% - 0.85rem);
+    overflow: scroll;
+}
+
+#navs .btn {
+    display: block;
+    width: 100%;
+    margin: 0.05rem;
+}
+
+#navs img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0.05rem;
+    cursor: pointer;
+}
+
+#large-img-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    padding: 0.02rem;
+    background: rgba(0, 0, 0, .2);
+    overflow: scroll;
+}
+
+#large-img-container img {
+    display: block;
+    width: 100%;
+}
+
+#large-img-container button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0.5rem;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    background: rgba(255, 255, 255, .3);
+    color: greenyellow;
+    font-size: 0.2rem;
+    color: gray;
+}
+
+#app.at-phone {
+    padding-right: 0;
+    background: rgba(0,0,0,.6);
+}
+#phone-head{
+    display: flex;
+    width: 100%;
+    height: 0.6rem;
+    overflow: hidden;
+    margin: 0.05rem 0;
+    padding: 0 0.05rem;
+}
+#next, #prev{
+    flex: 1;
+    margin: 0 0.1rem;
+}

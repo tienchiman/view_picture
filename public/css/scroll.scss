@@ -1,0 +1,73 @@
+.m-scroll{
+  overflow-x: hidden;
+  overflow-y: scroll;
+  $scrollbarbgColor: #F2F6FC;
+  $scrollbarwidth: 5px;
+  $scrollbarheight: 5px;
+
+  &::-webkit-scrollbar {
+    width: $scrollbarwidth;
+    height: $scrollbarheight;
+  }
+  &::-webkit-scrollbar-button {
+    background-color: $scrollbarbgColor;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $scrollbarbgColor;
+  }
+  &::-webkit-scrollbar-track-piece {
+    background-color: $scrollbarbgColor;
+  }
+  &::-webkit-scrollbar-thumb {
+    /*border-radius: 5px;
+    height: 5px;
+    background-color: rgba(255,0,0,.2);*/
+    background: rgba(22,113,239,.2);
+    width: 2px;
+  }
+  &::-webkit-scrollbar-corner {
+    background-color: $scrollbarbgColor;
+  }
+  &::-webkit-scrollbar-resizer {
+    background-color: $scrollbarbgColor;
+  }
+  &::-webkit-scrollbar {
+    width: $scrollbarwidth;
+    height: $scrollbarheight;
+  }
+  /*o内核*/
+  .-o-scrollbar {
+    -moz-appearance: none !important;
+    background: $scrollbarbgColor !important;
+  }
+  &::-o-scrollbar-button {
+    background-color: $scrollbarbgColor;
+  }
+  &::-o-scrollbar-track {
+    background-color: $scrollbarbgColor;
+  }
+  &::-o-scrollbar-track-piece {
+    background-color: $scrollbarbgColor;
+  }
+  &::-o-scrollbar-thumb {
+    background-color: $scrollbarbgColor;
+
+  }
+  &::-o-scrollbar-corner {
+    background-color: $scrollbarbgColor;
+  }
+  &::-o-scrollbar-resizer {
+    background-color: $scrollbarbgColor;
+  }
+  /*IE10,IE11,IE12*/
+  -ms-scroll-chaining: chained;
+  -ms-overflow-style: none;
+  -ms-content-zooming: zoom;
+  -ms-scroll-rails: none;
+  -ms-content-zoom-limit-min: 100%;
+  -ms-content-zoom-limit-max: 500%;
+  -ms-scroll-snap-type: proximity;
+  -ms-scroll-snap-points-x: snapList(100%, 200%, 300%, 400%, 500%);
+  -ms-overflow-style: none;
+  overflow: auto;
+}

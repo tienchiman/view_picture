@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片预览</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="shortcut icon" href="./imgs/icon.jpg"/>
+    <link rel="stylesheet" href="./css/scroll.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body class="scroll">
+<div class="app scroll" id="app">
+    <div class="left " id="left">
+        <a class="head" href="./downimg.html">觉得不过瘾?去下载吧</a>
+        <div class="" id="phone-head" display="flex" style="display: none;">
+            <button id="prev">prev</button>
+            <button id="next">next</button>
+        </div>
+        <div class="img" id="img-board">
+            <img src="./upload/imgs/imgs8.jpg" id="img-container">
+        </div>
+    </div>
+    <div class="right scroll" id="right">
+       <label class="head" id="nav">navs</label>
+        <div class="navs scroll" id="navs"></div>
+    </div>
+    <div id="large-img-container" style="display: none;" class="scroll a   b  c  dd">
+        <button type="button" id="close">close</button>
+        <img src="./upload/imgs/imgs8.jpg" alt="large" id="large-img">
+    </div>
+</div>
+<script src="./js/rem.js"></script>
+<script src="./js/config.js"></script>
+<script src="./js/axios.min.js"></script>
+<script src="./js/utils.js"></script>
+<script src="./js/index.js"></script>
+</body>
+</html>

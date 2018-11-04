@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片预览</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="shortcut icon" href="./imgs/icon.jpg"/>
+    <link rel="stylesheet" href="./css/scroll.css">
+    <link rel="stylesheet" href="./css/down.css">
+</head>
+<body class="scroll">
+<div class="app scroll" id="app">
+    <div class="main">
+        <div class="upload">
+            <div class="input">
+                <label for="upload-local" class="label upload-local common-btn">
+                    CHOOSE LOCAL FILES
+                    <input type="file" @change="bindFileChange" id="upload-local" style="display: none;">
+                </label>
+                <label class="label upload-network">
+                    <input type="text" :value="networkinput" class="common-btn" @change="onUploadNetInput" id="upload-network">
+                </label>
+                <button type="button" class="common-btn label" @click="bindSubmit">submit</button>
+            </div>
+            <div class="img-container">
+                <img   $src="activeImgSrc">
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<script src="./js/rem.js"></script>
+<script src="./js/config.js"></script>
+<script src="./js/axios.min.js"></script>
+<script src="./js/utils.js"></script>
+<script src="./js/vdom.js"></script>
+<script>
+    const { App, Util: {request,isUrl} } = window;
+
+    const app = new App({
+        data: {
+            name: '你好',
+            activeImgSrc: {src: './upload/imgs/1541343105962.png'},
+            networkinput: 'http://'
+        },
+        mounted(that){
+
+        },
+        methods: {
+            onUploadNetInput({target: {value}}){
+                this.$commit('networkinput',value);
+            },
+            bindSubmit(){
+                const url = this.networkinput;
+                if(isUrl(url)){
+                    request({method:'post',url: '/upload_network_file',data: {url}}).then(({path}) => {
+                        this.$commit('activeImgSrc',{src: path});
+                    })
+                }else{
+                    console.error('error')
+                }
+
+            },
+            bindFileChange({target: {files: [file]}}){
+
+            }
+        }
+    })
+
+
+</script>
+</body>
+</html>
